@@ -3,6 +3,7 @@ $(document).ready(function(){
     const passwordInput = $("#passwordInput");
     const firstName = $("#FirstName");
     const LastName = $("#LastName");
+    const signUpForm = $("#signUpForm");
 
 
     signUpForm.on("submit", function(event){
@@ -15,6 +16,8 @@ $(document).ready(function(){
             last_name: LastName.val().trim()
 
         };
+            
+            
 
         if(!userData.email || !userData.password){
             return;
@@ -28,9 +31,12 @@ $(document).ready(function(){
             $.post("/api/signup", {
                 email: email,
                 password: password
+                // first_name: firstName,
+                // last_name: LastName
+
 
             }).then(function(data){
-                window.location.replace("/login");
+                window.location.replace("/index");
 
             })
             .catch(function(err){
