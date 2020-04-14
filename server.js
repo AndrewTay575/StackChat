@@ -1,19 +1,21 @@
 var express = require("express");
-const logger = require("morgan");
+var session = require("express-session");
 var PORT = process.env.PORT || 3306;
 
 var app = express();
-app.use(logger("dev"));
-app.use(express.static("public"));
 
+app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(session({ secret: "", resave: true, saveUninitialized: true }));
 var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-var routes = require("./controllers/carController.js");
+var routes = require("");
 app.use(routes);
 
 app.listen(PORT, function() {
