@@ -11,8 +11,8 @@ $(document).ready(function(){
         const userData = {
             email: emailInput.val().trim(),
             password: passwordInput.val().trim(),
-            first_name: firstName.val().trim(),
-            last_name: LastName.val().trim()
+            // first_name: firstName.val().trim(),
+            // last_name: LastName.val().trim()
 
         };
 
@@ -24,10 +24,13 @@ $(document).ready(function(){
         emailInput.val("");
         passwordInput.val("");
 
-        function signUpUser(email, password){
+        function signUpUser(emailInput, passwordInput){
             $.post("/api/signup", {
-                email: email,
-                password: password
+                email: emailInput,
+                password: passwordInput,
+                // first_name: firstName,
+                // last_name: LastName
+
 
             }).then(function(data){
                 window.location.replace("/login");

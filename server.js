@@ -1,6 +1,8 @@
 var express = require("express");
 var session = require("express-session");
-var PORT = process.env.PORT || 3306;
+var passport = require("./config/passport");
+var handlebars = require("express-handlebars");
+var PORT = process.env.PORT || 8080;
 
 var app = express();
 
@@ -9,13 +11,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(session({ secret: "", resave: true, saveUninitialized: true }));
+app.use(session({ secret: "chit chat", resave: true, saveUninitialized: true }));
 var exphbs = require("express-handlebars");
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine("handlebars", handlebars({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-var routes = require("");
+var routes = require("./routes/apiRoutes");
 app.use(routes);
 
 app.listen(PORT, function() {
