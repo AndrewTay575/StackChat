@@ -12,13 +12,14 @@ app.use(express.json());
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(session({ secret: "chit chat", resave: true, saveUninitialized: true }));
-var exphbs = require("express-handlebars");
+
 
 app.engine("handlebars", handlebars({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-var routes = require("./routes/apiRoutes");
-app.use(routes);
+require("./routes/apiRoutes")(app);
+
+
 
 app.listen(PORT, function() {
   console.log("Server listening on: http://localhost:" + PORT);
