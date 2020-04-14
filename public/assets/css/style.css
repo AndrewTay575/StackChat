@@ -4,7 +4,9 @@ body {
     font-family: 'Poppins', sans-serif;
   font-weight: 400;
   }
-
+  .myhome h1 {
+  font-size: 40px !important;
+}
   a:link, a:visited, a:hover {
     text-decoration: none !important;
   }
