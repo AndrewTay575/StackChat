@@ -18,7 +18,7 @@ $(document).ready(function () {
 
         $.post("/api/login", userData
         ).then(function () {
-            window.location.replace("/");
+            window.location.replace("/api/interface");
         })
             .catch(function (err) {
                 console.log(err);
