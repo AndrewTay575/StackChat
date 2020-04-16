@@ -7,7 +7,7 @@ $(document).ready(function () {
         $.get("/logout"
         ).then(function (data) {
     
-            window.location.replace("/");
+            window.location.replace("/login");
         })
             .catch(function (err) {
                 console.log(err);
