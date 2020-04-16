@@ -15,7 +15,7 @@ module.exports = function (app) {
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
   app.post("/api/signup", function (req, res) {
-      
+
     db.user.create({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
@@ -30,6 +30,12 @@ module.exports = function (app) {
         res.status(401).json(err);
       });
   });
+
+  app.get("/api/interface", function (req, res) {
+
+    res.render("interface")
+  });
+
 
   // Route for logging user out
   app.get("/logout", function (req, res) {
