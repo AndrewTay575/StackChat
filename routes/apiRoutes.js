@@ -11,6 +11,10 @@ module.exports = function (app) {
     res.json(req.user);
   });
 
+  // app.get("/api/login", function(req,res){
+  //   res.redirect("login");
+  // });
+
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
   // how we configured our Sequelize User Model. If the user is created successfully, proceed to log the user in,
   // otherwise send back an error
@@ -31,16 +35,10 @@ module.exports = function (app) {
       });
   });
 
-  app.get("/api/interface", function (req, res) {
-
-    res.render("interface")
-  });
-
-
+  
   // Route for logging user out
   app.get("/logout", function (req, res) {
     req.logout();
-    res.redirect("/");
   });
 
   // Route for getting some data about our user to be used client side

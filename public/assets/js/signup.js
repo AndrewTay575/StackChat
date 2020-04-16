@@ -20,7 +20,7 @@ $(document).ready(function () {
 
         $.post("/api/signup", userData
            ).then(function (data) {
-            window.location.replace("/");
+            window.location.replace("/login");
 
         })
             .catch(function (err) {
