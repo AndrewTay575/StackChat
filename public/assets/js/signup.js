@@ -5,7 +5,9 @@ $(document).ready(function () {
     const lastName = $("#lastName");
     const signUpForm = $("#signUpForm");
 
-
+    // function firstName(firstName){
+    //     return firstName.val()
+    // } 
     signUpForm.on("submit", function (event) {
         event.preventDefault();
 
@@ -37,3 +39,4 @@ $(document).ready(function () {
 
 
 });
+

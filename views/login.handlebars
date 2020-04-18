@@ -76,13 +76,13 @@
           console.log("ID Token: " + id_token);
         }
         
-         $.post('/api/login', profile )
+        {{!-- $.post('/api/login', profile )
          .then(data => {
            window.location.replace('/interface');
          })
          .catch(function (err) {
            console.log(err)
-         });
+         }); --}}
       </script>
     <script src="../assets/js/login.js"></script>
 </body>
