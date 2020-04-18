@@ -7,11 +7,13 @@ $(document).ready(function () {
     googlelogin.onSignIn("click", function (googleUser) {
         const profile =  googleUser.getBasicProfile();
         
+        $.get("/interface", (req, res) => {
+                res.json("success!");
+            }) 
+
     });
 
-    $.get("/interface", (req, res) => {
-        res.json("success!");
-    }) 
+    
 
     
 
