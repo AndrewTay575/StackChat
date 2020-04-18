@@ -1,5 +1,5 @@
 {
-  "name": "Project-2",
+  "name": "Stack-Chat",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -9,15 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AndrewTay575/Project-2.git"
+    "url": "git+https://github.com/AndrewTay575/Stack-Chat.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/AndrewTay575/Project-2/issues"
+    "url": "https://github.com/AndrewTay575/Stack-Chat/issues"
   },
-  "homepage": "https://github.com/AndrewTay575/Project-2#readme",
+  "homepage": "https://github.com/AndrewTay575/Stack-Chat#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
