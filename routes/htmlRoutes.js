@@ -3,12 +3,12 @@ const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 
 module.exports = function (app) {
-
+    
     app.get("/home", function (req, res) {
         if (req.user) {
-            res.direct("/")
+            res.redirect("/")
         }
-        res.sendFile(path.join(__dirname, "../public/index.html"));
+        res.render("index");
     });
 
 
@@ -16,31 +16,77 @@ module.exports = function (app) {
         if (req.user) {
             res.redirect("/interface");
         }
+        else res.render("login");
 
-        res.sendFile(path.join(__dirname, "../public/login.html"));
+    app.post("/api/login", function (req, res) {
+        if (req.user) {
+        res.redirect("/interface");
+        }
+        
+        else res.render("login");
     });
 
     app.get("/register", function (req, res) {
         if (req.user) {
-            res.direct("/register");
+            res.redirect("/interface");
         }
-        res.sendFile(path.join(__dirname, "../public/register.html"));
+        else res.render("register");
+        //res.render("register")
     });
 
-    app.get("/interface", function (req, res) {
+    app.post("/register", function (req, res) {
         if (req.user) {
-            res.direct("/intrface");
+            res.redirect("/interface");
         }
-        res.sendFile(path.join(__dirname, "../public/interface.html"));
+        else res.render("register");
+        //res.render("register")
+    });
+
+    // app.get("/interface", function (req, res) {
+    //     if (!req.user) {
+    //         res.redirect("/login");
+    //     }
+    //     //else res.render("interface.html"));
+    //     else res.render("interface")
+    // });
+    
+    app.get("/interface", function (req, res) {
+        
+            res.render('interface')
+        
+        //else res.render("interface.html"));
+
+        //res.render("index.html"));
+        
     });
 
 
 
-    app.get("/interface", isAuthenticated, function (req, res) {
-        res.sendFile(path.join(__dirname, "../public/login.html"));
+    app.get("/interface/:friend", function (req, res) {
+        let friend = req.params.friend;
+
+        if (!req.user) {
+            res.redirect("/login");
+        }
+        else res.render('interface')
+        //else res.render("interface");
+        //else res.render("interface", {email: req.user.email, friends: []})
+    });
+
+    app.post('/api/signup' , (req, res) => {
+        if (!req.user) {
+            res.redirect('/api/login')
+        }
+        else res.render('interface')
     });
 
 
 
+    // app.get("/interface", isAuthenticated, function (req, res) {
+    //     res.render("interface");
+    // });
 
+})
+
+    
 };
