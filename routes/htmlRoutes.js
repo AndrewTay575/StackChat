@@ -62,13 +62,10 @@ module.exports = function (app) {
 
 
 
-    app.get("/interface/:friend", function (req, res) {
+    app.post("/interface/:friend", (req, res) => {
         let friend = req.params.friend;
-
-        if (!req.user) {
-            res.redirect("/login");
-        }
-        else res.render('interface')
+        
+         res.render('interface/:friend')
         //else res.render("interface");
         //else res.render("interface", {email: req.user.email, friends: []})
     });
