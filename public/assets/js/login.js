@@ -2,6 +2,18 @@ $(document).ready(function () {
     const loginForm = $(".loginForm");
     const emailInput = $("#userEmail");
     const passwordInput = $("#userPassword");
+    const googlelogin = $(".g-signin2");
+
+    googlelogin.onSignIn("click", function (googleUser) {
+        const profile =  googleUser.getBasicProfile();
+        
+    });
+
+    $.get("/interface", (req, res) => {
+        res.json("success!");
+    }) 
+
+    
 
     loginForm.on("submit", function (event) {
         event.preventDefault();
