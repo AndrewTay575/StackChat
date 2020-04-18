@@ -1,5 +1,8 @@
 // Requiring our models and passport as we've configured it
 // var express = require("express");
+var express = require("express");
+const path = require("path")
+var router = express.Router();
 var db = require("../models");
 var passport = require("../config/passport");
 
@@ -9,7 +12,10 @@ module.exports = function (app) {
   // Otherwise the user will be sent an error
   app.post("/api/login", passport.authenticate("local"), function (req, res) {
     res.json(req.user);
+
   });
+
+  
 
   // app.get("/api/login", function(req,res){
   //   res.redirect("login");
@@ -35,7 +41,16 @@ module.exports = function (app) {
       });
   });
 
-  
+  // app.get("/interface", function (req, res) {
+  //       if (!req.user) {
+  //           res.render("interface")
+  //        //  res.redirect("/");
+  //         }
+        
+  //       else res.render('interface');
+        
+  //   });
+
   // Route for logging user out
   app.get("/logout", function (req, res) {
     req.logout();

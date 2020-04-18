@@ -1,5 +1,13 @@
-
-   <div class="bg-gray-100 antialiased font-sans">
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>STACKCHAT</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+      <link rel='stylesheet' href='assets/css/tailwind.min.css'>
+   </head>
+   <body class="bg-gray-100 antialiased font-sans">
       <nav id="header" class="lg:px-16 px-8 bg-white flex flex-wrap items-center py-4 shadow-md">
          <div class="flex-1 flex justify-between items-center"> <a class="flex items-center tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-xl " href="index.html"><i class="fas fa-layer-group"></i>&nbsp; STACKCHAT </a> </div>
          <label for="menu-toggle" class="pointer-cursor md:hidden block">
@@ -14,7 +22,7 @@
                <li>
                   <div class="md:p-4 py-3 px-0 block"><i class="far fa-user-circle"></i>&nbsp; Hello Manuel</div>
                </li>
-               <button id="logoutBtn">Log Out</button>
+               <li><a id="logoutBtn" class="md:p-4 py-3 px-0 block " href=""><i class="fas fa-power-off"></i></i>&nbsp; Logout</a></li>
             </ul>
         </nav>
       </div>
@@ -130,103 +138,34 @@
          <!-- Chat messages -->
          <div class="px-6 py-4 flex-1 overflow-y-scroll bg-white">
             <div class="mt-4">
-            <!-- A message -->
-            <div class="flex items-start mb-4 text-sm">
+               <div id="message-container"></div>
+               <!-- A message -->
+            <!-- <div class="flex items-start mb-4 text-sm">
                <img src="https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-512.png" class="w-10 h-10 rounded mr-3">
-               <div class="flex-1 overflow-hidden">
-                  <div> <span class="font-bold">Manuel</span> <span class="text-grey text-xs">11:46</span> </div>
-                  <p class="text-black leading-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat aliquam massa ut fermentum.</p>
-               </div>
-            </div>
-            <!-- A message -->
-            <div class="flex items-start mb-4 text-sm">
-                <img src="https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-512.png" class="w-10 h-10 rounded mr-3">
-               <div class="flex-1 overflow-hidden">
-                  <div> <span class="font-bold">Kyle</span> <span class="text-grey text-xs">12:45</span> </div>
-                  <p class="text-black leading-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat aliquam massa ut fermentum.</p>
-               </div>
-            </div>
-            <!-- A message -->
-            <div class="flex items-start mb-4 text-sm">
-                <img src="https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-512.png" class="w-10 h-10 rounded mr-3">
-               <div class="flex-1 overflow-hidden">
-                  <div> <span class="font-bold">Andrew</span> <span class="text-grey text-xs">12:46</span> </div>
-                  <p class="text-black leading-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat aliquam massa ut fermentum.</p>
-               </div>
-            </div>
-            <!-- A message -->
-            <div class="flex items-start mb-4 text-sm">
-                <img src="https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-512.png" class="w-10 h-10 rounded mr-3">
-               <div class="flex-1 overflow-hidden">
-                  <div> <span class="font-bold">Anthony</span> <span class="text-grey text-xs">11:46</span> </div>
-                  <p class="text-black leading-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat aliquam massa ut fermentum.</p>
-               </div>
-            </div>
-            <!-- A message -->
-            <div class="flex items-start mb-4 text-sm">
-                <img src="https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-512.png" class="w-10 h-10 rounded mr-3">
-               <div class="flex-1 overflow-hidden">
-                  <div> <span class="font-bold">Graydon</span> <span class="text-grey text-xs">12:45</span> </div>
-                  <p class="text-black leading-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat aliquam massa ut fermentum.</p>
-               </div>
-            </div>
-            <!-- A message -->
-            <div class="flex items-start mb-4 text-sm">
-                <img src="https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-512.png" class="w-10 h-10 rounded mr-3">
-               <div class="flex-1 overflow-hidden">
-                  <div> <span class="font-bold">Ronny</span> <span class="text-grey text-xs">12:46</span> </div>
-                  <p class="text-black leading-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat aliquam massa ut fermentum.</p>
-               </div>
-            </div>
-            <!-- A message -->
-            <div class="flex items-start mb-4 text-sm">
-                <img src="https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-512.png" class="w-10 h-10 rounded mr-3">
-               <div class="flex-1 overflow-hidden">
-                  <div> <span class="font-bold">Eric</span> <span class="text-grey text-xs">11:46</span> </div>
-                  <p class="text-black leading-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat aliquam massa ut fermentum.</p>
-               </div>
-            </div>
-            <!-- A message -->
-            <div class="flex items-start mb-4 text-sm">
-                <img src="https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-512.png" class="w-10 h-10 rounded mr-3">
-               <div class="flex-1 overflow-hidden">
-                  <div> <span class="font-bold">Peter Pan</span> <span class="text-grey text-xs">12:45</span> </div>
-                  <p class="text-black leading-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat aliquam massa ut fermentum.</p>
-               </div>
-            </div>
-            <div class="flex items-start mb-4 text-sm">
-                <img src="https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-512.png" class="w-10 h-10 rounded mr-3">
-                <div class="flex-1 overflow-hidden">
-                   <div> <span class="font-bold">Full Stack</span> <span class="text-grey text-xs">12:45</span> </div>
-                   <p class="text-black leading-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat aliquam massa ut fermentum.</p>
-                </div>
-             </div>
-             <div class="flex items-start mb-4 text-sm">
-                <img src="https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-512.png" class="w-10 h-10 rounded mr-3">
-                <div class="flex-1 overflow-hidden">
-                   <div> <span class="font-bold">Full Satck</span> <span class="text-grey text-xs">12:45</span> </div>
-                   <p class="text-black leading-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat aliquam massa ut fermentum.</p>
-                </div>
-             </div>
-             <div class="flex items-start mb-4 text-sm">
-                <img src="https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-512.png" class="w-10 h-10 rounded mr-3">
-                <div class="flex-1 overflow-hidden">
-                   <div> <span class="font-bold">Full Stack</span> <span class="text-grey text-xs">12:45</span> </div>
-                   <p class="text-black leading-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat aliquam massa ut fermentum.</p>
-                </div>
-             </div>
-            <div class="pb-6 px-4 flex-none bg-white">
-               <div class="flex rounded-lg border-2 border-grey overflow-hidden">
-                  <span class="text-3xl text-grey border-r-2 border-grey p-2">
-                     <svg class="fill-current h-6 w-6 block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                        <path d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z"/>
-                     </svg>
-                  </span>
-                  <input type="text" class="w-full px-4" placeholder="Message #general" /> 
+              <div class="flex-1 overflow-hidden">
+                 <div> <span class="font-bold">Ronny</span> <span class="text-grey text-xs">12:46</span> </div>
+                 <p class="text-black leading-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam feugiat aliquam massa ut fermentum.</p>
+              </div>
+           </div> -->
+               <div class="pb-6 px-4 flex-none bg-white">
+                  <div class="flex rounded-lg border-2 border-grey overflow-hidden">
+                     <span class="text-3xl text-grey border-r-2 border-grey p-2" id="button">
+                        <svg class="fill-current h-6 w-6 block" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                           <path d="M16 10c0 .553-.048 1-.601 1H11v4.399c0 .552-.447.601-1 .601-.553 0-1-.049-1-.601V11H4.601C4.049 11 4 10.553 4 10c0-.553.049-1 .601-1H9V4.601C9 4.048 9.447 4 10 4c.553 0 1 .048 1 .601V9h4.399c.553 0 .601.447.601 1z"/>
+                        </svg>
+                     </span>
+                     <form id="send-container">
+                        <input type="text" class="w-full px-4" id="message-input" placeholder="Message #general" />
+                     </form>
+                  </div>
                </div>
             </div>
          </div>
-      </div>
     </div>
- 
-   </div>
+    <script src="http://localhost:4040/socket.io/socket.io.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./assets/js/logout.js"></script>
+    <script src="./assets/js/script.js"></script>
+   </body>
+</html>
