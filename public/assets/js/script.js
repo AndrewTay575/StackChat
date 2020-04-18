@@ -25,7 +25,7 @@ socket.on('user-disconnected', name => {
 function assignName(name){
     signUpForm.on('submit', e => {
     e.preventDefault()
-    name = $('#FirstName').val()
+    return name = $('#FirstName').val()
 
 }
 )}
@@ -67,7 +67,7 @@ function appendMessage(message, name) {
         <img src="https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-512.png" class="w-10 h-10 rounded mr-3">
         <div class="flex-1 overflow-hidden">
 
-            <div> <span class="font-bold">${firstName}</span> <span class="text-grey text-xs">${time}</span> </div>
+            <div> <span class="font-bold">Manuel</span> <span class="text-grey text-xs">${time}</span> </div>
             <p class="text-black leading-normal">${message}</p>
         </div>
     </div>`
