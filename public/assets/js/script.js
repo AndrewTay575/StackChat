@@ -1,4 +1,4 @@
-const socket = io('http://localhost:4000')
+const socket = io()
 const messageForm = $('#send-container')
 const messageInput = $('#message-input')
 const messageContainer = $('#message-container')

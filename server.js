@@ -4,7 +4,7 @@ var passport = require("./config/passport");
 var handlebars = require("express-handlebars");
 var PORT = process.env.PORT || 8080;
 var db = require("./models");
-
+var SocketIO = require('socket.io');
 var app = express();
 
 app.use(express.static("public"));
@@ -21,17 +21,11 @@ app.set("view engine", "handlebars");
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
-
+let io
 db.sequelize.sync({ force: false }).then(function () {
-  app.listen(PORT, function () {
+   io = SocketIO(app.listen(PORT, function () {
     console.log("Server listening on: http://localhost:" + PORT);
-  });
-});
-
- const io = require("socket.io")(4000)
- const users = {}
-
- io.on('connection', socket => {
+  io.on('connection', socket => {
      socket.on('new-user', name => {
          users[socket.id] = name
          socket.broadcast.emit('user-connected', name)
@@ -46,3 +40,12 @@ db.sequelize.sync({ force: false }).then(function () {
          delete users[socket.id]
      })
  })
+
+  }));
+  
+});
+
+ //const io = require("socket.io")(4000)
+ const users = {}
+
+ 
