@@ -1,4 +1,4 @@
-const socket = io('http://localhost:4000')
+const socket = io()
 const messageForm = $('#send-container')
 const messageInput = $('#message-input')
 const messageContainer = $('#message-container')
@@ -67,7 +67,7 @@ function appendMessage(message, name) {
         <img src="https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-512.png" class="w-10 h-10 rounded mr-3">
         <div class="flex-1 overflow-hidden">
 
-            <div> <span class="font-bold">Manuel</span> <span class="text-grey text-xs">${time}</span> </div>
+            <div> <span class="font-bold">User</span> <span class="text-grey text-xs">${time}</span> </div>
             <p class="text-black leading-normal">${message}</p>
         </div>
     </div>`
