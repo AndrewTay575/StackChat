@@ -4,16 +4,19 @@ $(document).ready(function () {
     const passwordInput = $("#userPassword");
     const googlelogin = $(".g-signin2");
 
-    googlelogin.onSignIn("click", function (googleUser) {
+    function onSignIn( googleUser) {
         const profile =  googleUser.getBasicProfile();
         
         $.get("/interface", (req, res) => {
                 res.json("success!");
             }) 
 
-    });
+    };
 
-    
+    googlelogin.on("click", function (event){
+        event.preventDefault();
+        onSignIn(googleUser);
+    })
 
     
 
