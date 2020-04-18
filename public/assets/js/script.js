@@ -5,6 +5,8 @@ const messageContainer = $('#message-container')
 const button = $('#button');
 const time = moment().format('LTS');
 const signUpForm = $("#signUpForm");
+const memberForm = $('.memberForm');
+const friendName = $('#memBtn')
  // <-- however were store user's Name
 
 appendMessage('You Joined')
@@ -23,7 +25,8 @@ socket.on('user-disconnected', name => {
 function assignName(name){
     signUpForm.on('submit', e => {
     e.preventDefault()
-   return name = $('#FirstName').val()
+    name = $('#FirstName').val()
+
 }
 )}
 
@@ -45,6 +48,14 @@ button.on('click', e => {
     messageInput.val('')
 })
 
+friendName.on('click', e => {
+    e.preventDefault();
+    const friend = {
+    name: friendName.val()
+    } 
+
+    $.post('/interface/:friend', friend)
+})
 
 function appendMessage(message, name) {
     assignName(name);
@@ -56,7 +67,7 @@ function appendMessage(message, name) {
         <img src="https://cdn1.iconfinder.com/data/icons/ninja-things-1/1772/ninja-512.png" class="w-10 h-10 rounded mr-3">
         <div class="flex-1 overflow-hidden">
 
-            <div> <span class="font-bold">${name}</span> <span class="text-grey text-xs">${time}</span> </div>
+            <div> <span class="font-bold">${firstName}</span> <span class="text-grey text-xs">${time}</span> </div>
             <p class="text-black leading-normal">${message}</p>
         </div>
     </div>`
